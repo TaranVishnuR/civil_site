@@ -1,0 +1,88 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brandWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandWrap img {
+  height: 36px;
+}
+
+.brandText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f3d73;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 28px;
+}
+
+.menu a:hover {
+  color: #e6a700;
+}
+
+.link {
+  color: #0f3d73;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Hover underline */
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #e6a700;
+  transition: width 0.2s ease;
+}
+
+.link:hover {
+  color: #e6a700;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Active */
+.active {
+  color: #e6a700;
+  font-weight: 600;
+}
+
+.active::after {
+  width: 100%;
+}
+
+/* Hide desktop menu on mobile */
+@media (max-width: 768px) {
+  .nav {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+}

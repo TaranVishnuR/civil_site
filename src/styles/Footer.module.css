@@ -1,0 +1,99 @@
+.footer {
+  background-color: #0f3d73;
+  color: white;
+  margin-top: 40px; /* reduced */
+}
+
+/* CTA */
+.cta {
+  padding: 36px 16px 28px; /* ⬅ reduced */
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 22px; /* ⬅ smaller */
+  margin-bottom: 6px;
+}
+
+.cta p {
+  max-width: 520px;
+  margin: 0 auto 14px; /* ⬅ reduced gap */
+  font-size: 13.5px;
+  color: #e5e7eb;
+  margin-bottom: 16px;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 10px; /* tighter */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  background-color: #e6a700;
+  color: #1f2937;
+  padding: 8px 16px; /* ⬅ smaller buttons */
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.secondaryBtn {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Bottom Bar */
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 16px; /* ⬅ reduced */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand img {
+  width: 30px; /* ⬅ slightly smaller */
+  height: auto;
+}
+
+.brand strong {
+  display: block;
+  font-size: 13px;
+}
+
+.brand span {
+  font-size: 11px;
+  color: #d1d5db;
+}
+
+.copy {
+  font-size: 11px;
+  color: #e5e7eb;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .cta h2 {
+    font-size: 20px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

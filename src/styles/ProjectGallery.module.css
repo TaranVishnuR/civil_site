@@ -1,0 +1,92 @@
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 16px;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 28px;
+  color: #0f3d73;
+  margin-bottom: 6px;
+}
+
+.subtext {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+/* FILTER BUTTONS */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.filters button {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #0f3d73;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #f9fafb;
+}
+
+.filters .active {
+  background-color: #0f3d73;
+  color: #ffffff;
+  border-color: #0f3d73;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* IMAGE CARD */
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ✅ PERFECT SQUARE */
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ FIXES DIFFERENT RATIOS */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 61, 115, 0.15);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 40px 14px;
+  }
+
+  .gallery h2 {
+    font-size: 24px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+}

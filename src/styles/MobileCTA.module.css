@@ -1,0 +1,37 @@
+.mobileCta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileCta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    z-index: 1000;
+    background: #ffffff;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .call,
+  .whatsapp {
+    flex: 1;
+    padding: 14px 0;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .call {
+    background: #0c5283;
+    color: #ffffff;
+  }
+
+  .whatsapp {
+    background: #ffffff;
+    color: #0c5283;
+    border-left: 1px solid #eaeaea;
+  }
+}
