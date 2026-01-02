@@ -86,7 +86,7 @@ export default function Home() {
         <div className={styles.mapWrap}>
           <iframe
             title="Sri Adhiya Builders Location"
-            src="https://www.google.com/maps?q=Captain%20City%20Pollachi&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.061193473054!2d77.04425111656268!3d10.658730301130378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8370069326ecd%3A0x7262e3f666ee33b8!2sSri%20adhiya%20builders!5e0!3m2!1sen!2sin!4v1767365676638!5m2!1sen!2sin"
             loading="lazy"
           ></iframe>
         </div>
