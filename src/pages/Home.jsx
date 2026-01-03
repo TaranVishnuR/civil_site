@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import styles from "../styles/Home.module.css";
 import { Link } from "react-router-dom";
 
@@ -8,6 +9,30 @@ import TrustBooster from "../components/TrustBooster";
 import SEO from "../components/SEO";
 
 export default function Home() {
+  const revealRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.revealVisible);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealRefs.current.forEach(el => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const addToRefs = el => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
+
   return (
     <>
       <SEO
@@ -16,24 +41,21 @@ export default function Home() {
       />
 
       {/* HERO */}
-      <section className={styles.hero}>
-        <div className={styles.content} data-aos="fade-up">
+      <section ref={addToRefs} className={`${styles.hero} ${styles.reveal}`}>
+        <div className={styles.content}>
           <h1>
             Built Right <br />
             <span>From Foundation to Finish</span>
           </h1>
-
           <p>
             Sri Adhiya Builders delivers reliable residential and commercial
             construction with 10+ years of experience, quality materials,
             and on-time completion.
           </p>
-
           <div className={styles.actions}>
             <a href="tel:+919842238373" className={styles.primaryBtn}>
               Call Now
             </a>
-
             <a
               href="https://wa.me/919842238373?text=Hi%20I%20am%20interested%20in%20construction%20services"
               target="_blank"
@@ -46,40 +68,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <div data-aos="fade-in">
+      <div ref={addToRefs} className={styles.reveal}>
         <TrustStrip />
       </div>
 
-      {/* PROJECTS (only 3 showcase images inside ProjectGallery) */}
-      <div data-aos="zoom-in">
+      <div ref={addToRefs} className={styles.reveal}>
         <ProjectGallery />
       </div>
 
-      <div className={styles.linkWrap} data-aos="fade-up">
+      <div ref={addToRefs} className={`${styles.linkWrap} ${styles.reveal}`}>
         <Link to="/projects" className={styles.sectionLink}>
           View All Projects →
         </Link>
       </div>
 
-      {/* TRUST BOOSTER */}
-      <div data-aos="fade-up">
+      <div ref={addToRefs} className={styles.reveal}>
         <TrustBooster />
       </div>
 
-      {/* SERVICES */}
-      <div data-aos="fade-up">
+      <div ref={addToRefs} className={styles.reveal}>
         <Services />
       </div>
 
-      <div className={styles.linkWrap} data-aos="fade-up">
+      <div ref={addToRefs} className={`${styles.linkWrap} ${styles.reveal}`}>
         <Link to="/services" className={styles.sectionLink}>
           Explore All Services →
         </Link>
       </div>
 
-      {/* MAP (KEPT) */}
-      <section className={styles.mapSection} data-aos="fade-up">
+      <section ref={addToRefs} className={`${styles.mapSection} ${styles.reveal}`}>
         <h2>Visit Our Office</h2>
         <p>Captain City, Udumalai Road, Pollachi – Tamil Nadu</p>
 

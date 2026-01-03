@@ -1,5 +1,4 @@
 import styles from "../styles/Services.module.css";
-import { Link } from "react-router-dom";
 
 export default function Services({ showTitle = true }) {
   return (
@@ -32,12 +31,9 @@ export default function Services({ showTitle = true }) {
 
         <div className={styles.card}>
           <h3>Renovation</h3>
-          <p>
-            Complete renovation from planning to final handover.
-          </p>
+          <p>Complete renovation from planning to final handover.</p>
         </div>
 
-        {/* NEW SERVICE 4 */}
         <div className={styles.card}>
           <h3>Interior Works</h3>
           <p>

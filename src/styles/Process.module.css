@@ -1,58 +1,87 @@
 .process {
-  padding: 48px 20px 36px;
+  padding: 36px 20px 28px; /* reduced */
   background: #f9fafb;
   text-align: center;
 }
 
 .process h2 {
-  color: #e6a700;
-  font-size: 26px;
-  margin-bottom: 6px;
+  color: #0f3d73;
+  font-size: 24px;
+  margin-bottom: 4px;
 }
 
 .subtext {
   color: #6b7280;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
+  font-size: 14.5px;
 }
 
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .step {
   background: #ffffff;
-  padding: 24px;
+  padding: 22px;
   border-radius: 14px;
   border: 1px solid #e5e7eb;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(15, 61, 115, 0.15);
 }
 
 .step span {
   display: inline-block;
   background: #0f3d73;
   color: #fff;
-  padding: 6px 14px;
+  padding: 5px 13px;
   border-radius: 20px;
-  font-size: 13px;
-  margin-bottom: 12px;
+  font-size: 12.5px;
+  margin-bottom: 10px;
 }
 
 .step h3 {
   color: #0f3d73;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-size: 16.5px;
 }
 
 .step p {
-  font-size: 14px;
+  font-size: 13.5px;
   color: #4b5563;
+  line-height: 1.55;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .steps {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* disable reveal */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

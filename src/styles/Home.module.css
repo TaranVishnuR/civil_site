@@ -138,6 +138,27 @@
   color: #ffffff;
 }
 
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile gentle animation */
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(10px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+}
+
+
 /* MOBILE */
 @media (max-width: 768px) {
   .hero {
