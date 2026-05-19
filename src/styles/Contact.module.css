@@ -25,9 +25,13 @@
 .infoGrid {
   max-width: 1100px;
   margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* reduced */
+  grid-template-columns: repeat(3, 280px);
+
+  justify-content: center;
+
+  gap: 40px;
 }
 
 .infoCard {
@@ -90,9 +94,17 @@
   transform: translate(0, 0) scale(1);
 }
 
-.fromLeft { transform: translateX(-50px); }
-.fromRight { transform: translateX(50px); }
-.zoomIn { transform: scale(0.9); }
+.fromLeft {
+  transform: translateX(-18px);
+}
+
+.fromRight {
+  transform: translateX(18px);
+}
+
+.zoomIn {
+  transform: scale(0.98);
+}
 
 /* MOBILE */
 @media (max-width: 768px) {
